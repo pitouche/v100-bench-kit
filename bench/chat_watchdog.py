@@ -30,8 +30,8 @@ sort sans rien faire. C'est le seul point de collision possible — il est
 fermé par construction. Idempotence : les IDs de nœud dépendent uniquement
 du nœud en erreur → aucune reprise ne peut être doublée.
 
-USAGE (cron, user guile, toutes les 5 min) :
-  * * * * * cd /home/guile/llama-experiments/bench && /home/guile/venv.3.12.13/bin/python3.12 chat_watchdog.py >> /home/guile/llama-experiments/bench/chat_watchdog.cron.log 2>&1
+USAGE (cron, toutes les 5 min) :
+  * * * * * cd <LLAMA_ROOT>/bench && python3 chat_watchdog.py >> <LLAMA_ROOT>/bench/chat_watchdog.cron.log 2>&1
 
 LOG : bench/chat_watchdog.log (+ miroir cron.log pour le cron)
 Env : OWUI_URL, OWUI_CHAT_ID (override chat), OWUI_TERMINAL_ID (override
@@ -76,7 +76,7 @@ WD_PROMPT = (
 
 # Signatures d'erreur de dépassement de contexte (périmètre du watchdog).
 # Le reste (Ollama: Cannot connect, modèle absent, OOM, …) n'est PAS du
-# watchdog : le superviseur le reprend après le run, ou guile intervient.
+# watchdog : le superviseur le reprend après le run, ou l'opérateur intervient.
 CTX_SIGNATURES = (
     "exceed_context_size_error",
     "exceeds the available context size",

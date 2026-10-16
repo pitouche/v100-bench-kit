@@ -13,8 +13,8 @@ set -u
 : "${NSYS_BIN:=/opt/nvidia/nsight-systems/2025.5.2/target-linux-x64/nsys}"
 : "${MODEL_GGUF:=/usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb}"
 : "${FILLER_FILE:=$LLAMA_ROOT/v100-repro/work/filler-200k.txt}"
-cd /home/guile/llama-experiments
-CUPATH=~/llama-experiments/h2/cupti129-test
+cd "${LLAMA_ROOT}"
+CUPATH="${CUPATH_DIR:-${LLAMA_ROOT}/h2/cupti129-test}"
 PORT=44901
 NTOK=${1:-64}
 OUT=/tmp/cupath7_$(date +%H%M%S)
@@ -172,5 +172,6 @@ echo "trace du pid (plus gros fichier) : $TRC"
 python3 - "$TRC" "$TS_START" "$TS_END" "$WALL_MS" <<'PY'
 import sys
 sys.argv = [sys.argv[0], sys.argv[1], "window", sys.argv[2], sys.argv[3], sys.argv[4]]
-exec(open("/home/guile/llama-experiments/h2/cupti129-test/cupath_analyze_v2.py").read())
+import os
+exec(open(os.environ.get("CUPATH_ANALYZE", "/home/guile/llama-experiments/h2/cupti129-test/cupath_analyze_v2.py")).read())
 PY

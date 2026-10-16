@@ -2,7 +2,7 @@
 # E2.1 — NCU baseline du partial_kernel (harnais e1, copie du kernel). Root requis.
 set -u
 cd ${LLAMA_ROOT:-/home/guile/llama-experiments}/h2/cupti129-test/e2
-NCU=/home/guile/ncu-2024.1.1/usr/lib/nsight-compute/ncu
+NCU="${NCU_BIN:-/home/guile/ncu-2024.1.1/usr/lib/nsight-compute/ncu}"
 RAW=/tmp/e2_base_ncu.txt
 restore(){
   echo "[restore] redemarrage ollama-v100..."

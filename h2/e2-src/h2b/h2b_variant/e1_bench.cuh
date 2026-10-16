@@ -1,3 +1,6 @@
+// Copyright (c) 2025 ggml.ai / llama.cpp contributors — le kernel `partial_kernel`
+// ci-dessous est une COPIE EXACTE sous licence MIT (obligation de copyright : ce fichier
+// doit être accompagné de la licence, voir LICENSE + NOTICE.md à la racine du kit).
 // e1_bench.cuh — E1 : harnais standalone du ggml_q8v::partial_kernel (sm_70).
 //
 // Objectif : mesurer le DRAM réel (dram__bytes_read/write.sum) et la durée d'un lance

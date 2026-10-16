@@ -232,8 +232,7 @@ le tir redonnerait exactement le même prompt trop long. D'où la double action.
    cours n'est jamais touchée) ;
 3. l'erreur du nœud contient une **signature de contexte** (`exceed_context_size_error`,
    « exceeds the available context size », « context window », …). Les erreurs hors
-   périmètre (« Ollama: Cannot connect… », modèle absent, OOM) restent au superviseur / à
-   guile.
+   périmètre (« Ollama: Cannot connect… », modèle absent, OOM) restent au superviseur / à l'opérateur.
 
 **Les deux actions quand le cas se présente :**
 
@@ -264,7 +263,7 @@ proprio (`WD_PROMPT`, signature « REPRISE AUTOMATIQUE (watchdog) »).
   pendant ces ~2-3 min attend dans sa tolérance, sans avorter).
 - Safety global : `WATCHDOG_MAX_RUN_S` (défaut 300 s, SIGALRM).
 
-**Installation (cron user guile, système cron actif) :**
+**Installation (cron du user local, système cron actif) :**
 
 ```cron
 */5 * * * * cd /home/guile/llama-experiments/bench && /home/guile/venv.3.12.13/bin/python3.12 chat_watchdog.py >> /home/guile/llama-experiments/bench/chat_watchdog.cron.log 2>&1

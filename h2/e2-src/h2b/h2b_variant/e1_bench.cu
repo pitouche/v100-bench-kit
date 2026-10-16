@@ -1,3 +1,4 @@
+// (c) 2026 guile — harnais du kit, MIT (voir LICENSE + NOTICE.md à la racine du kit).
 // e1_bench.cu — E1 : harnais hôte du partial_kernel (sm_70).
 //
 // Reproduit la VRAIE géométrie decode de run6 pour UN lance partial :

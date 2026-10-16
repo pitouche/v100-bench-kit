@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
 # h2_capture.sh — FORAGE H2 : capture nsys d'un decode MTP long contexte
-# (protocole : /home/guile/llama-experiments/h2/PROTOCOLE.md)
+# (protocole : <LLAMA_ROOT>/h2/PROTOCOLE.md)
 #
 # ⚠️ STOPPE le service ollama-v100 (~15-25 min) et se restaure seul.
 #    À lancer par l'utilisateur, uniquement après validation du protocole.
@@ -15,7 +15,7 @@
 #   → nsys start → decode 1800 tok (fenêtre ~60-90 s) → nsys stop
 #   → export sqlite + stats csv → kill server → RESTORE service + vérifs
 #
-# Résultats : /home/guile/llama-experiments/h2/runs/run-<stamp>/
+# Résultats : <LLAMA_ROOT>/h2/runs/run-<stamp>/
 # =============================================================================
 set -uo pipefail
 

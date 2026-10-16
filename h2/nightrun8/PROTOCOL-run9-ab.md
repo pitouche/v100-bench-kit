@@ -1,6 +1,6 @@
 # RUN9 — A/B contrôlé REF (`e4afbb4a`) vs H2 (`a4b6f440`), contexte fixe ~41k
 
-**Écrit AVANT tout lancement** (consigne de guile). Expérience comparative
+**Écrit AVANT tout lancement** (consigne de l'opérateur). Expérience comparative
 suivant RUN8, pour trancher la contradiction des A/B précédents (§28.3 :
 protocole A @100k → H2 gagne ; protocole B @41k → REF gagne).
 

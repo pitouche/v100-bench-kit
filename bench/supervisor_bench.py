@@ -6,7 +6,7 @@ supervisor_bench.py — superviseur de run V100 avec reprise d'inférence.
 USAGE (mode unique) :
   python3 supervisor_bench.py run <bench.py> [args du bench] [--detach]
 
-Principe (figé avec guile le 11/10) :
+Principe (figé avec l'opérateur le 11/10) :
   - Le superviseur est EXTERNE au bench : il le lance comme enfant (propre
     groupe de process), attend sa sortie, et c'est tout en amont.
   - Le bench se charge de SA séquence V100 (stop/reconfig/restart du
@@ -33,7 +33,7 @@ Principe (figé avec guile le 11/10) :
   Pas de recovery "blind" du service, pas de dévination, pas de timeout
   sur l'enfant (les timeouts sont gérés dans les scripts du bench).
 
-LOG : /home/guile/llama-experiments/bench/supervisor_bench.log
+LOG : <LLAMA_ROOT>/bench/supervisor_bench.log
 VERROU : /tmp/kolbo-supervisor-bench.lock (1 superviseur à la fois)
 RC DERNIER RUN : /tmp/kolbo-supervisor-bench.last-rc (utile en --detach)
 """
@@ -89,7 +89,7 @@ CONNECT_TIMEOUT = 10
 FIRE_WAIT_S = int(os.getenv("BENCH_FIRE_WAIT_S", "45"))
 
 # Message de reprise : UNIQUE, identique que le service soit up ou down
-# (guile : pas de message spécial — la 2e erreur est la preuve de vie).
+# (note : pas de message spécial — la 2e erreur est la preuve de vie).
 RESUME_PROMPT = (
     "REPRISE AUTOMATIQUE (superviseur bench) : ton inférence a été interrompue "
     "par un run de test V100. Le run est terminé. Reprends EXACTEMENT "

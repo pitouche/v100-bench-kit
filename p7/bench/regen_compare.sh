@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # regen_compare.sh — régénère la comparaison A/B depuis A.tsv/B.tsv existants (sans re-run)
 set -uo pipefail
-cd /home/guile/llama-experiments/p7/bench
+: "${LLAMA_ROOT:=/home/guile/llama-experiments}"
+cd "${LLAMA_ROOT}/p7/bench"
 R=${1:-res-20261008-100240}
 
 summary(){ # tsv -> "tok ms tps acc mean" (NA toléré dans acc/mean)

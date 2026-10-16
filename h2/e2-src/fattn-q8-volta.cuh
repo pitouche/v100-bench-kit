@@ -1,3 +1,9 @@
+// Copyright (c) 2025 ggml.ai / llama.cpp contributors
+// Ce fichier est une COPIE de ggml/src/ggml-cuda/fattn-q8-volta.cuh du fork
+// llama-volta-merged (llama.cpp b11081 + merge v100-optimized), licence MIT :
+// la presente mention doit etre conservee (voir LICENSE + NOTICE.md a la racine du kit).
+// Snapshot byte-exact de reference (md5 36f564e2) : build/fattn-q8-volta.cuh.prod-36f564e2.
+
 #pragma once
 
 #include "common.cuh"

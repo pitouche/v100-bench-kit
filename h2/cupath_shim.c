@@ -1,3 +1,5 @@
+// (c) 2026 guile — shim du kit V100, MIT (voir LICENSE + NOTICE.md a la racine).
+// API CUPTI (NVIDIA) : les libs CUPTI ne sont pas redistribuees par ce kit.
 // libcupath.so — shim LD_PRELOAD : tracing CUPTI 12.9 in-process (préfixe isolé)
 // Objectif : observer les kernels (nom, grid, stream, durées) d'un processus CUDA
 // existant SANS le modifier. Cible de validation : llama-server (verify MTP, ggml-cuda).

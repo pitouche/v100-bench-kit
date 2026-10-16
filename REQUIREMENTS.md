@@ -36,7 +36,7 @@ Pour reproduire les essais sur une V100.
 | CUDA toolkit | 12.6.85 | `tools/cuda-12.6/usr/local/cuda-12.6` |
 | go | 1.26.x | `/usr/bin/go` |
 | Nsight Compute | 2024.1.1 | `~/ncu-2024.1.1/` (mesures NCU de `e2/`) |
-| python3 | ≥ 3.10 | système (stdlib seule pour les harnais) |
+| python3 | ≥ 3.10 | système. Dépendances tier : **requests** (superviseur, fixture), **PIL/Pillow** (vision synthétique auto_bench), **matplotlib** (plot_bench). Le reste est stdlib. |
 | nvidia driver | ≥ 575 (tests : 580.178.04) | `nvidia-smi` |
 
 > Pourquoi pas le gcc système ? Le build de référence est fait avec gcc 13.4 +

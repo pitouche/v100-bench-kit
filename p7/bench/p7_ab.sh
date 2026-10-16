@@ -13,9 +13,11 @@
 # =============================================================================
 set -uo pipefail
 
-AB=/home/guile/llama-experiments/p7/bench
-SWAP=/home/guile/llama-experiments/autopsy-20261005/q8-qpn/swap_revert.sh
-P7SO=/home/guile/llama-experiments/p7/work/build-p7/llama-server-cuda_v12/bin/libggml-cuda.so
+: "${LLAMA_ROOT:=/home/guile/llama-experiments}"
+
+AB="${LLAMA_ROOT}/p7/bench"
+SWAP="${SWAP_SCRIPT:-${LLAMA_ROOT}/autopsy-20261005/q8-qpn/swap_revert.sh}"
+P7SO="${LLAMA_ROOT}/p7/work/build-p7/llama-server-cuda_v12/bin/libggml-cuda.so"
 SERVICE=ollama-v100
 PORT=11434
 API="http://127.0.0.1:$PORT"
@@ -47,7 +49,7 @@ cat > "$RES/task3.json" <<'EOF'
  "messages":[{"role":"user","content":"Solve step by step: a train leaves Paris at 09:00 at 120 km/h toward Lyon. Another leaves Lyon at 09:40 at 150 km/h toward Paris. Paris-Lyon is 465 km. When and where do they meet?"}]}
 EOF
 
-so_md5(){ md5sum /home/guile/llama-experiments/ollama-v100/lib/ollama/cuda_v12/libggml-cuda.so 2>/dev/null | cut -c1-8; }
+so_md5(){ md5sum "${LLAMA_ROOT}/ollama-v100/lib/ollama/cuda_v12/libggml-cuda.so" 2>/dev/null | cut -c1-8; }
 wait_api(){ for i in $(seq 1 90); do curl -s --max-time 2 "$API/api/tags" >/dev/null 2>&1 && return 0; sleep 1; done; return 1; }
 vram_used(){ nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -i $V100_IDX 2>/dev/null | tr -d ' '; }
 

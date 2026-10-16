@@ -13,8 +13,8 @@ set -u
 : "${NSYS_BIN:=/opt/nvidia/nsight-systems/2025.5.2/target-linux-x64/nsys}"
 : "${MODEL_GGUF:=/usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb}"
 : "${FILLER_FILE:=$LLAMA_ROOT/v100-repro/work/filler-200k.txt}"
-cd /home/guile/llama-experiments
-CUPATH=~/llama-experiments/h2/cupti129-test
+cd "${LLAMA_ROOT}"
+CUPATH="${CUPATH_DIR:-${LLAMA_ROOT}/h2/cupti129-test}"
 PORT=44901
 NTOK=${1:-64}
 OUT=/tmp/cupath_llama_$(date +%H%M%S)

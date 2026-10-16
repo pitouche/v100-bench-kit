@@ -1,3 +1,5 @@
+// (c) 2026 guile — shim du kit V100, MIT (voir LICENSE + NOTICE.md a la racine).
+// API CUPTI (NVIDIA) : les libs CUPTI ne sont pas redistribuees par ce kit.
 // libcupath_v2.so — shim LD_PRELOAD CUPTI 12.9, FORMAT v2 (mission Kolbo E3)
 //
 // Objectif : exposer des INTERVALLES GPU réels (début/fin) pour calculer union,

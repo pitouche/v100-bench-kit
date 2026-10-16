@@ -1,3 +1,4 @@
+// (c) 2026 guile — harnais du kit, MIT (voir LICENSE + NOTICE.md à la racine du kit).
 // e1_check.cu — E1 : verification de CORRECTION numerique de la variante.
 // Identique a e1_bench.cu (memes donnees aléatoires, meme seed, meme géométrie)
 // mais DUMPE la sortie COMPLETE (pacc, pm, pl) au lieu d'un probe [0..1].
