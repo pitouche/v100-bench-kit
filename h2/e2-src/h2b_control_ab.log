@@ -1,0 +1,53 @@
+[10:21:15] CONTROLE: A=a4b6f440 (H2)  B=0eb5afbd (H2b)  decode=1200 tok x 2 réplicats (ordre alterné)
+[10:21:15] === [r1-A-h2] lib=a4b6f440 decode=1200 ===
+[10:21:16] V100 libre: 0 MiB
+[10:21:17] [r1-A-h2] fit+device OK
+[10:21:25] [r1-A-h2] model loaded (9s)
+[10:21:25] [r1-A-h2] warmup + shortlist OK
+[10:21:25] [r1-A-h2] prefill 100k...
+[10:24:43] [r1-A-h2] 2e passe chaude...
+[10:24:44] [r1-A-h2] chaud — decode 1200 tok...
+[10:25:19] [r1-A-h2] decode fini (wall 35.1 s)
+./h2b_control_ab.sh: line 153: 619650 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[10:25:20] [r1-A-h2] V100 liberee (0 MiB)
+[10:25:21] === [r1-B-h2b] lib=0eb5afbd decode=1200 ===
+[10:25:21] V100 libre: 0 MiB
+[10:25:22] [r1-B-h2b] fit+device OK
+[10:25:27] [r1-B-h2b] model loaded (6s)
+[10:25:27] [r1-B-h2b] warmup + shortlist OK
+[10:25:27] [r1-B-h2b] prefill 100k...
+[10:28:45] [r1-B-h2b] 2e passe chaude...
+[10:28:46] [r1-B-h2b] chaud — decode 1200 tok...
+[10:29:27] [r1-B-h2b] decode fini (wall 40.1 s)
+./h2b_control_ab.sh: line 153: 619838 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[10:29:28] [r1-B-h2b] V100 liberee (0 MiB)
+[10:29:28] === [r2-B-h2b] lib=0eb5afbd decode=1200 ===
+[10:29:28] V100 libre: 0 MiB
+[10:29:30] [r2-B-h2b] fit+device OK
+[10:29:33] [r2-B-h2b] model loaded (4s)
+[10:29:33] [r2-B-h2b] warmup + shortlist OK
+[10:29:33] [r2-B-h2b] prefill 100k...
+[10:32:52] [r2-B-h2b] 2e passe chaude...
+[10:32:53] [r2-B-h2b] chaud — decode 1200 tok...
+[10:33:33] [r2-B-h2b] decode fini (wall 40.0 s)
+./h2b_control_ab.sh: line 153: 620010 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[10:33:35] [r2-B-h2b] V100 liberee (0 MiB)
+[10:33:35] === [r2-A-h2] lib=a4b6f440 decode=1200 ===
+[10:33:35] V100 libre: 0 MiB
+[10:33:37] [r2-A-h2] fit+device OK
+[10:33:40] [r2-A-h2] model loaded (4s)
+[10:33:40] [r2-A-h2] warmup + shortlist OK
+[10:33:40] [r2-A-h2] prefill 100k...
+[10:36:59] [r2-A-h2] 2e passe chaude...
+[10:37:00] [r2-A-h2] chaud — decode 1200 tok...
+[10:37:36] [r2-A-h2] decode fini (wall 35.2 s)
+./h2b_control_ab.sh: line 153: 620651 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[10:37:37] [r2-A-h2] V100 liberee (0 MiB)
+[10:37:37] === CONTROLE termine — restauration prod ===
+[10:37:37] === restauration service ===
+[10:37:49] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)
+[10:37:49] === VERIF FINALE ===
+service=active md5=e4afbb4a
+[10:37:49] FIN h2b_control_ab.sh
+[10:37:49] === restauration service ===
+[10:38:01] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

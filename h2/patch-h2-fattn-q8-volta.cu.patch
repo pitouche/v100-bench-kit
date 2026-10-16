@@ -1,0 +1,20 @@
+--- a/ggml/src/ggml-cuda/fattn-q8-volta.cuh	2026-10-16 17:13:51.274155795 +0000
++++ b/ggml/src/ggml-cuda/fattn-q8-volta.cuh	2026-10-16 17:13:51.275209490 +0000
+@@ -144,7 +144,7 @@
+ constexpr int D = 256;
+ constexpr int G = 6;
+ constexpr int T = 4;
+-constexpr int BC = 16;
++constexpr int BC = 8; // H2: tuile key 16->8
+ constexpr int BR = 32;
+ constexpr int THREADS = 128;
+ constexpr int D_SLICE = 64;
+@@ -256,7 +256,7 @@
+         __syncthreads();
+ 
+ #pragma unroll
+-        for (int sub=0;sub<2;sub++) {
++        for (int sub=0;sub<BC/8;sub++) { // H2: BC/8 subtiles
+             const int sub_k0=k0+sub*8;
+             float ds[8]={};
+ #pragma unroll

@@ -1,0 +1,12 @@
+V100 libre: 0 MiB
+DEV=Tesla V100-PCIE-32GB sm_70
+--- n_kv=107344 ---
+  pacc : BIT-IDENTIQUE (4552d3ac2f4f)
+  pm : BIT-IDENTIQUE (a36eb7951f3a)
+  pl : BIT-IDENTIQUE (1c0cb7099578)
+--- n_kv=107351 ---
+  pacc : BIT-IDENTIQUE (0805a9cc29c3)
+  pm : BIT-IDENTIQUE (a36eb7951f3a)
+  pl : BIT-IDENTIQUE (7fd193619b83)
+=== restauration service ===
+restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

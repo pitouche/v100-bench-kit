@@ -1,0 +1,47 @@
+[10:02:40] === P7 A/B applicative — STAMP 20261008-100240 ===
+[10:02:40] so de depart : e4afbb4a
+[10:02:41] === PHASE A — baseline (prod e4afbb4a) ===
+[10:02:50] warmup A OK
+  T1           eval 256 tok 5604 ms (45.68 t/s) | acc=0.47771 mean=NA rates=(0.752, 0.419, 0.257)
+  T2           eval 512 tok 7456 ms (68.67 t/s) | acc=0.89423 mean=NA rates=(0.950, 0.921, 0.806)
+  T3           eval 256 tok 3806 ms (67.26 t/s) | acc=0.86792 mean=NA rates=(0.944, 0.887, 0.761)
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+ValueError: Unknown format code 'f' for object of type 'str'
+[10:03:21] Phase A resume:   (VRAM 31186 MiB)
+[10:03:21] === SWAP vers .so P7 (a1b3b776) ===
+[10:03:25] so apres swap : a1b3b776
+[10:03:25] === PHASE B — P7 X4 (a1b3b776) ===
+[10:03:31] warmup B OK
+  T1           eval 256 tok 5539 ms (46.22 t/s) | acc=0.47771 mean=NA rates=(0.752, 0.419, 0.257)
+  T2           eval 512 tok 7374 ms (69.44 t/s) | acc=0.89423 mean=NA rates=(0.950, 0.921, 0.806)
+  T3           eval 256 tok 3766 ms (67.97 t/s) | acc=0.86792 mean=NA rates=(0.944, 0.887, 0.761)
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+ValueError: Unknown format code 'f' for object of type 'str'
+[10:04:02] Phase B resume:   (VRAM 31186 MiB)
+[10:04:02] === REVERT vers known-good ===
+[10:04:06] so final : e4afbb4a
+================================================================
+ RESULTAT A/B — kernel Q6_K P7 (X4) vs PROD (W4R4) — applicatif
+================================================================
+  A = prod e4afbb4a (W4R4)   VRAM 31186 MiB
+  B = P7   a1b3b776 (X4)     VRAM 31186 MiB
+  taches : T1=256 / T2=512 / T3=256 tok, T=0, MTP actif
+----------------------------------------------------------------
+  metrique                   A (prod)       B (P7)   delta
+  eval tok total                                  
+  eval ms total                                   
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: ''
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: ''
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: ''
+================================================================
+ TSV detail : /home/guile/llama-experiments/p7/bench/res-20261008-100240/A.tsv  /home/guile/llama-experiments/p7/bench/res-20261008-100240/B.tsv
+================================================================
+[10:04:06] fin — service restaure (prod e4afbb4a)

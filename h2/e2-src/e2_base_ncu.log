@@ -1,0 +1,11 @@
+=== etat avant ===
+service=active
+0, 3085 MiB, 5021 MiB
+1, 32350 MiB, 145 MiB
+V100_mem=0 MiB (ok=1)
+=== NCU baseline (root, V100=CUDA dev 0) ===
+ncu exit=0
+=== FIN (le trap redémarre le service) ===
+[restore] redemarrage ollama-v100...
+md5sum: ../../ollama-v100/lib/ollama/cuda_v12/libggml-cuda.so: No such file or directory
+[restore] service=active api_ok=1 V100_mem=0 MiB md5=

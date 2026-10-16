@@ -1,0 +1,5 @@
+bigfiles/*
+!bigfiles/bigfiles.sha256
+!bigfiles/README.md
+__pycache__/
+*.pyc

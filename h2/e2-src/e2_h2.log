@@ -1,0 +1,17 @@
+service=active
+GATE DEVICE OK : DEV=Tesla V100-PCIE-32GB sm_70
+base,1,1596,-4.875000,-4.593750
+h2,1,1349,-4.875000,-4.593750
+base,2,1595,-4.875000,-4.593750
+h2,2,1350,-4.875000,-4.593750
+base,3,1596,-4.875000,-4.593750
+h2,3,1348,-4.875000,-4.593750
+
+=== RECAP A/B microbench (us/lance, median des passes) ===
+  base  : med= 1596.0 us  (pass: ['1596', '1595', '1596'])    ref
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+KeyError: 'a3'
+=== FIN (le trap redémarre le service) ===
+md5sum: ../../ollama-v100/lib/ollama/cuda_v12/libggml-cuda.so: No such file or directory
+[restore] service=active api_ok=1 V100_mem=0 MiB md5=

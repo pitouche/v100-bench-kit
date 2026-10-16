@@ -1,0 +1,2 @@
+[ perf record: Woken up 6 times to write data ]
+[ perf record: Captured and wrote 2,604 MB /home/guile/llama-experiments/h2/ab_results/perf-n3/perf.data (26590 samples) ]

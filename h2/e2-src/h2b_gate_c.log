@@ -1,0 +1,7 @@
+V100 libre: 0 MiB
+DEV=Tesla V100-PCIE-32GB sm_70
+PROD pass1=1593us PROD pass2=1599us PROD pass3=1768us 
+H2 pass1=1410us H2 pass2=1350us H2 pass3=1351us 
+H2B pass1=1350us H2B pass2=1349us H2B pass3=1349us 
+=== restauration service ===
+restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

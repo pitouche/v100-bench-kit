@@ -1,0 +1,1 @@
+h2cudatrace: armed pid=185580 -> /home/guile/llama-experiments/h2/sync_runs/s-2-q6/cudatrace.bin (format: u64 wall_ns | i32 tid | i16 op | 16 o/record)

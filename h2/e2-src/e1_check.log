@@ -1,0 +1,18 @@
+=== stop prod ===
+V100 libre: 0 MiB
+DEV=Tesla V100-PCIE-32GB sm_70
+=== dump base ===
+dump OK : /tmp/chk_base (pacc=7864320 B, pm/pl=61440 B)
+=== dump H2 ===
+dump OK : /tmp/chk_h2 (pacc=7864320 B, pm/pl=61440 B)
+=== comparaison (donnees identiques seed 12345, meme geometrie) ===
+  pacc : IDENTIQUE (0805a9cc29c3)
+  pm : IDENTIQUE (a36eb7951f3a)
+  pl : IDENTIQUE (7fd193619b83)
+  pacc: 0/3932160 elements differents (max_rel=0.00e+00)
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+struct.error: unpack requires a buffer of 122880 bytes
+VERDICT CHECK : SORTIES BIT-IDENTIQUES
+=== restauration service ===
+restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

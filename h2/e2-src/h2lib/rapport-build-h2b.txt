@@ -1,0 +1,6 @@
+lib prod (fork intact)   : md5=e4afbb4a
+lib H2  (BC 16->8)       : md5=a4b6f440
+lib H2b (BC=8 + PC=16)   : md5=0eb5afbd
+fattn.h2b.o              : md5=eeae23041c49
+marqueur W4R4 present    : 1
+prod                     : intact

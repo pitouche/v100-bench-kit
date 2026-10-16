@@ -1,0 +1,8 @@
+V100 libre: 0 MiB
+DEV=Tesla V100-PCIE-32GB sm_70
+=== Gate C (confirm) : 5 passes x 30 iters, mediane ===
+PROD: 1591 1598 1598 1603 1596 med=1598us
+H2: 1509 1509 1508 1440 1347 med=1508us
+H2B: 1350 1351 1351 1348 1349 med=1350us
+=== restauration service ===
+restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

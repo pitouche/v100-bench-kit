@@ -1,0 +1,5 @@
+[22:44:37] prod md5=e4afbb4a (attendu e4afbb4a)
+[22:44:37] === A: build propre (fork v100-repro intact) — gate recette ===
+[22:49:45] build propre A : md5=bd05f0eb (prod=e4afbb4a)
+[22:49:45] GATE A ECHOUEE (md5 propre != prod)
+[22:49:45] ERREUR BLOQUANTE : gate A

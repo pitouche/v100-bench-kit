@@ -1,0 +1,53 @@
+[23:05:34] A=e4afbb4a  B=063b3c85  decode=1200 tok x 2 réplicats (ordre alterné)
+[23:05:34] === [r1-A-prod] lib=e4afbb4a decode=1200 ===
+[23:05:35] V100 libre: 0 MiB
+[23:05:36] [r1-A-prod] fit+device OK
+[23:06:13] [r1-A-prod] model loaded (38s)
+[23:06:14] [r1-A-prod] warmup + shortlist OK
+[23:06:14] [r1-A-prod] prefill 100k...
+[23:09:28] [r1-A-prod] 2e passe chaude...
+[23:09:29] [r1-A-prod] chaud — decode 1200 tok...
+[23:10:08] [r1-A-prod] decode fini (wall 39.2 s)
+./h2_ab_lib.sh: line 165: 580913 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[23:10:09] [r1-A-prod] V100 liberee (0 MiB)
+[23:10:10] === [r1-B-h2] lib=063b3c85 decode=1200 ===
+[23:10:10] V100 libre: 0 MiB
+[23:10:11] [r1-B-h2] fit+device OK
+[23:10:16] [r1-B-h2] model loaded (6s)
+[23:10:16] [r1-B-h2] warmup + shortlist OK
+[23:10:16] [r1-B-h2] prefill 100k...
+[23:13:32] [r1-B-h2] 2e passe chaude...
+[23:13:33] [r1-B-h2] chaud — decode 1200 tok...
+[23:14:08] [r1-B-h2] decode fini (wall 34.4 s)
+./h2_ab_lib.sh: line 165: 581193 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[23:14:09] [r1-B-h2] V100 liberee (0 MiB)
+[23:14:09] === [r2-B-h2] lib=063b3c85 decode=1200 ===
+[23:14:09] V100 libre: 0 MiB
+[23:14:11] [r2-B-h2] fit+device OK
+[23:14:15] [r2-B-h2] model loaded (5s)
+[23:14:15] [r2-B-h2] warmup + shortlist OK
+[23:14:15] [r2-B-h2] prefill 100k...
+[23:17:32] [r2-B-h2] 2e passe chaude...
+[23:17:33] [r2-B-h2] chaud — decode 1200 tok...
+[23:18:08] [r2-B-h2] decode fini (wall 34.6 s)
+./h2_ab_lib.sh: line 165: 581367 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[23:18:09] [r2-B-h2] V100 liberee (0 MiB)
+[23:18:09] === [r2-A-prod] lib=e4afbb4a decode=1200 ===
+[23:18:09] V100 libre: 0 MiB
+[23:18:10] [r2-A-prod] fit+device OK
+[23:18:15] [r2-A-prod] model loaded (6s)
+[23:18:16] [r2-A-prod] warmup + shortlist OK
+[23:18:16] [r2-A-prod] prefill 100k...
+[23:21:32] [r2-A-prod] 2e passe chaude...
+[23:21:33] [r2-A-prod] chaud — decode 1200 tok...
+[23:22:13] [r2-A-prod] decode fini (wall 39.5 s)
+./h2_ab_lib.sh: line 165: 582012 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[23:22:14] [r2-A-prod] V100 liberee (0 MiB)
+[23:22:14] === A/B termines — restauration prod ===
+[23:22:14] === restauration service ===
+[23:22:27] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)
+[23:22:27] === VERIF FINALE ===
+service=active md5=e4afbb4a
+[23:22:27] FIN h2_ab_lib.sh
+[23:22:27] === restauration service ===
+[23:22:38] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

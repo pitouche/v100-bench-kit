@@ -1,0 +1,77 @@
+[10:02:40] === P7 A/B applicative — STAMP 20261008-100240 ===
+[10:02:40] so de depart : e4afbb4a
+[10:02:41] === PHASE A — baseline (prod e4afbb4a) ===
+[10:02:50] warmup A OK
+[10:03:21] Phase A resume:   (VRAM 31186 MiB)
+[10:03:21] === SWAP vers .so P7 (a1b3b776) ===
+2026-10-08 10:03:22 nouveau .so : md5=a1b3b776 sha256=dc59e8aaf0d7a2a6...
+2026-10-08 10:03:22 ### SWAP 2026-10-08 10:03:22 — nouveau .so md5 a1b3b776 ###
+2026-10-08 10:03:22 stop de ollama-v100.service ...
+2026-10-08 10:03:22 V100 VRAM libérée : 32495 MiB free
+2026-10-08 10:03:22 service stoppé, VRAM libre.
+2026-10-08 10:03:22 backup du .so en place (md5 e4afbb4a) -> /home/guile/llama-experiments/autopsy-20261005/q8-qpn/reference/swap-20261008-100322/
+2026-10-08 10:03:23 nouveau .so installé et vérifié
+2026-10-08 10:03:23 démarrage de ollama-v100.service ...
+2026-10-08 10:03:23 service ollama-v100.service = active
+2026-10-08 10:03:23 service : active | V100 VRAM free : 32495 MiB
+2026-10-08 10:03:25 API /api/tags : OK
+    - qwen3.8-27b-q6-mtp-vision:latest
+    - qwen3.8-27b-q6-mtp:latest
+    - qwen3.8-27b-q6-test:latest
+    - qwen3.8-27b-128k:latest
+    - qwen3.8-27b-32k:latest
+    - nomic-embed-text:latest
+2026-10-08 10:03:25 ### SWAP terminé. Pour revenir en arrière :  /home/guile/llama-experiments/autopsy-20261005/q8-qpn/swap_revert.sh revert ###
+[10:03:25] so apres swap : a1b3b776
+[10:03:25] === PHASE B — P7 X4 (a1b3b776) ===
+[10:03:31] warmup B OK
+[10:04:02] Phase B resume:   (VRAM 31186 MiB)
+[10:04:02] === REVERT vers known-good ===
+2026-10-08 10:04:02 ### REVERT 2026-10-08 10:04:02 — retour au known-good md5 e4afbb4a ###
+2026-10-08 10:04:02 stop de ollama-v100.service ...
+2026-10-08 10:04:02 V100 VRAM libérée : 32495 MiB free
+2026-10-08 10:04:02 service stoppé, VRAM libre.
+2026-10-08 10:04:03 backup du .so en place (md5 a1b3b776) -> /home/guile/llama-experiments/autopsy-20261005/q8-qpn/reference/swap-20261008-100402/
+2026-10-08 10:04:03 restauration known-good (md5 e4afbb4a) depuis /home/guile/llama-experiments/autopsy-20261005/q8-qpn/reference/libggml-cuda.so.e4afbb4a.known-good
+2026-10-08 10:04:04 vérification post-copie OK : .so == known-good byte-identique
+2026-10-08 10:04:04 démarrage de ollama-v100.service ...
+2026-10-08 10:04:04 service ollama-v100.service = active
+2026-10-08 10:04:04 service : active | V100 VRAM free : 32495 MiB
+2026-10-08 10:04:05 API /api/tags : OK
+    - qwen3.8-27b-q6-mtp-vision:latest
+    - qwen3.8-27b-q6-mtp:latest
+    - qwen3.8-27b-q6-test:latest
+    - qwen3.8-27b-128k:latest
+    - qwen3.8-27b-32k:latest
+    - nomic-embed-text:latest
+2026-10-08 10:04:05 ### REVERT terminé : prod back to known-good (md5 e4afbb4a) ###
+[10:04:06] so final : e4afbb4a
+================================================================
+ RESULTAT A/B — kernel Q6_K P7 (X4) vs PROD (W4R4) — applicatif
+================================================================
+  A = prod e4afbb4a (W4R4)   VRAM 31186 MiB
+  B = P7   a1b3b776 (X4)     VRAM 31186 MiB
+  taches : T1=256 / T2=512 / T3=256 tok, T=0, MTP actif
+----------------------------------------------------------------
+  metrique                   A (prod)       B (P7)   delta
+  eval tok total                                  
+  eval ms total                                   
+================================================================
+ TSV detail : /home/guile/llama-experiments/p7/bench/res-20261008-100240/A.tsv  /home/guile/llama-experiments/p7/bench/res-20261008-100240/B.tsv
+================================================================
+[10:04:06] fin — service restaure (prod e4afbb4a)
+================================================================
+ RESULTAT A/B — kernel Q6_K P7 (X4) vs PROD (W4R4) — applicatif
+ (régénéré depuis res-20261008-100240/A.tsv + res-20261008-100240/B.tsv, sans re-run)
+================================================================
+  A = prod e4afbb4a (W4R4)
+  B = P7   a1b3b776 (X4)
+  taches : T1=256 / T2=512 / T3=256 tok, T=0, MTP actif
+----------------------------------------------------------------
+  metrique                   A (prod)       B (P7)   delta
+  eval tok total                 1024         1024
+  eval ms total                 16866        16679
+  eval t/s (global)             60.71        61.39   +1.1%
+  acceptance moyenne           0.7466       0.7466   +0.0%
+  mean len : NA (A=NA B=NA) — le grep journal ne matche plus la ligne draft acceptance
+================================================================

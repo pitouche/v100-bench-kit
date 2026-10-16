@@ -1,0 +1,53 @@
+[09:17:50] A=e4afbb4a  B=0eb5afbd  decode=1200 tok x 2 réplicats (ordre alterné)
+[09:17:50] === [r1-A-prod] lib=e4afbb4a decode=1200 ===
+[09:17:51] V100 libre: 0 MiB
+[09:17:52] [r1-A-prod] fit+device OK
+[09:17:57] [r1-A-prod] model loaded (6s)
+[09:17:57] [r1-A-prod] warmup + shortlist OK
+[09:17:57] [r1-A-prod] prefill 100k...
+[09:21:15] [r1-A-prod] 2e passe chaude...
+[09:21:16] [r1-A-prod] chaud — decode 1200 tok...
+[09:21:56] [r1-A-prod] decode fini (wall 39.9 s)
+./h2b_ab_lib.sh: line 156: 615598 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[09:21:57] [r1-A-prod] V100 liberee (0 MiB)
+[09:21:57] === [r1-B-h2b] lib=0eb5afbd decode=1200 ===
+[09:21:57] V100 libre: 0 MiB
+[09:21:58] [r1-B-h2b] fit+device OK
+[09:22:04] [r1-B-h2b] model loaded (6s)
+[09:22:04] [r1-B-h2b] warmup + shortlist OK
+[09:22:04] [r1-B-h2b] prefill 100k...
+[09:25:22] [r1-B-h2b] 2e passe chaude...
+[09:25:23] [r1-B-h2b] chaud — decode 1200 tok...
+[09:26:03] [r1-B-h2b] decode fini (wall 40.4 s)
+./h2b_ab_lib.sh: line 156: 615879 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[09:26:04] [r1-B-h2b] V100 liberee (0 MiB)
+[09:26:04] === [r2-B-h2b] lib=0eb5afbd decode=1200 ===
+[09:26:05] V100 libre: 0 MiB
+[09:26:06] [r2-B-h2b] fit+device OK
+[09:26:10] [r2-B-h2b] model loaded (5s)
+[09:26:10] [r2-B-h2b] warmup + shortlist OK
+[09:26:10] [r2-B-h2b] prefill 100k...
+[09:29:28] [r2-B-h2b] 2e passe chaude...
+[09:29:29] [r2-B-h2b] chaud — decode 1200 tok...
+[09:30:09] [r2-B-h2b] decode fini (wall 40.0 s)
+./h2b_ab_lib.sh: line 156: 616049 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[09:30:10] [r2-B-h2b] V100 liberee (0 MiB)
+[09:30:10] === [r2-A-prod] lib=e4afbb4a decode=1200 ===
+[09:30:10] V100 libre: 0 MiB
+[09:30:12] [r2-A-prod] fit+device OK
+[09:30:15] [r2-A-prod] model loaded (4s)
+[09:30:16] [r2-A-prod] warmup + shortlist OK
+[09:30:16] [r2-A-prod] prefill 100k...
+[09:33:34] [r2-A-prod] 2e passe chaude...
+[09:33:35] [r2-A-prod] chaud — decode 1200 tok...
+[09:34:15] [r2-A-prod] decode fini (wall 40.0 s)
+./h2b_ab_lib.sh: line 156: 616223 Killed                     "$TARGET/lib/ollama/llama-server" --model /usr/share/ollama/.ollama/models/blobs/sha256-493301830a596b8ad56dc1329f80bbcb578c8e910da395feafdc9cd8263430bb --port $PORT --host 127.0.0.1 --no-webui -c 200000 -np 1 -lv 4 --no-log-prefix --no-log-timestamps --spec-type draft-mtp --spec-draft-n-max 3 --spec-draft-backend-sampling --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn auto -b 512 -ub 512 > "$RUN/server.out" 2>&1
+[09:34:16] [r2-A-prod] V100 liberee (0 MiB)
+[09:34:16] === A/B termines — restauration prod ===
+[09:34:16] === restauration service ===
+[09:34:29] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)
+[09:34:29] === VERIF FINALE ===
+service=active md5=e4afbb4a
+[09:34:29] FIN h2b_ab_lib.sh
+[09:34:29] === restauration service ===
+[09:34:40] restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)

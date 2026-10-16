@@ -1,0 +1,47 @@
+V100 libre: 0 MiB
+DEV=Tesla V100-PCIE-32GB sm_70
+  [prod 107344] [check] BC=16 n_kv=107344 splits=160
+  [prod 107344] dump OK : /tmp/gb_prod_107344 (pacc=7864320 B, pm/pl=61440 B)
+  [h2   107344] [check] BC=8 n_kv=107344 splits=160
+  [h2   107344] dump OK : /tmp/gb_h2_107344 (pacc=7864320 B, pm/pl=61440 B)
+  [h2b  107344] [check] BC=8 n_kv=107344 splits=160
+  [h2b  107344] dump OK : /tmp/gb_h2b_107344 (pacc=7864320 B, pm/pl=61440 B)
+  [prod 107351] [check] BC=16 n_kv=107351 splits=160
+  [prod 107351] dump OK : /tmp/gb_prod_107351 (pacc=7864320 B, pm/pl=61440 B)
+  [h2   107351] [check] BC=8 n_kv=107351 splits=160
+  [h2   107351] dump OK : /tmp/gb_h2_107351 (pacc=7864320 B, pm/pl=61440 B)
+  [h2b  107351] [check] BC=8 n_kv=107351 splits=160
+  [h2b  107351] dump OK : /tmp/gb_h2b_107351 (pacc=7864320 B, pm/pl=61440 B)
+  [prod 107521] [check] BC=16 n_kv=107521 splits=157
+  [prod 107521] dump OK : /tmp/gb_prod_107521 (pacc=7716864 B, pm/pl=60288 B)
+  [h2   107521] [check] BC=8 n_kv=107521 splits=159
+  [h2   107521] dump OK : /tmp/gb_h2_107521 (pacc=7815168 B, pm/pl=61056 B)
+  [h2b  107521] [check] BC=8 n_kv=107521 splits=157
+  [h2b  107521] dump OK : /tmp/gb_h2b_107521 (pacc=7716864 B, pm/pl=60288 B)
+  [prod 108551] [check] BC=16 n_kv=108551 splits=158
+  [prod 108551] dump OK : /tmp/gb_prod_108551 (pacc=7766016 B, pm/pl=60672 B)
+  [h2   108551] [check] BC=8 n_kv=108551 splits=160
+  [h2   108551] dump OK : /tmp/gb_h2_108551 (pacc=7864320 B, pm/pl=61440 B)
+  [h2b  108551] [check] BC=8 n_kv=108551 splits=158
+  [h2b  108551] dump OK : /tmp/gb_h2b_108551 (pacc=7766016 B, pm/pl=60672 B)
+
+=== Gate B : comparaison pacc/pm/pl (md5) ===
+ATTENDU: H2b == PROD partout ; H2 == PROD sous le seuil, != PROD au-dessus.
+--- n_kv=107344 ---
+  pacc : prod=4552d3ac2f4f h2=4552d3ac2f4f h2b=4552d3ac2f4f  [H2=identique | H2b=identique]
+  pm : prod=a36eb7951f3a h2=a36eb7951f3a h2b=a36eb7951f3a  [H2=identique | H2b=identique]
+  pl : prod=1c0cb7099578 h2=1c0cb7099578 h2b=1c0cb7099578  [H2=identique | H2b=identique]
+--- n_kv=107351 ---
+  pacc : prod=0805a9cc29c3 h2=0805a9cc29c3 h2b=0805a9cc29c3  [H2=identique | H2b=identique]
+  pm : prod=a36eb7951f3a h2=a36eb7951f3a h2b=a36eb7951f3a  [H2=identique | H2b=identique]
+  pl : prod=7fd193619b83 h2=7fd193619b83 h2b=7fd193619b83  [H2=identique | H2b=identique]
+--- n_kv=107521 ---
+  pacc : prod=4011d6e019ca h2=a56e97608353 h2b=4011d6e019ca  [H2=DIFFERENT | H2b=identique]
+  pm : prod=de33d6fa2bb1 h2=60a7c35a67dc h2b=de33d6fa2bb1  [H2=DIFFERENT | H2b=identique]
+  pl : prod=0f1a11ba4ca1 h2=b06c7a8fc8c5 h2b=0f1a11ba4ca1  [H2=DIFFERENT | H2b=identique]
+--- n_kv=108551 ---
+  pacc : prod=4d1b1fc809d7 h2=6f8df2ae76bc h2b=4d1b1fc809d7  [H2=DIFFERENT | H2b=identique]
+  pm : prod=c0dc9523923d h2=1bf02536566e h2b=c0dc9523923d  [H2=DIFFERENT | H2b=identique]
+  pl : prod=30e8492d2f2e h2=855d67bf178b h2b=30e8492d2f2e  [H2=DIFFERENT | H2b=identique]
+=== restauration service ===
+restore: service=active V100=0 MiB md5=e4afbb4a (attendu e4afbb4a)
